@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  npm:
+    build: ./docker/node
+    entrypoint: npm
+    volumes:
+      - src:/app
+  mocha:
+    build: ./docker/node
+    entrypoint: mocha
+    volumes:
+      - src:/app

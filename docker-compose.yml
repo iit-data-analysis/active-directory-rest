@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  active-directory-rest:
+    build: ./docker/node
+    restart: always
+    volumes:
+      - src:/app
+    ports:
+      - "8093:80"
