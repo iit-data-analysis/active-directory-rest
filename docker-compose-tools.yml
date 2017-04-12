@@ -5,9 +5,9 @@ services:
     build: ./docker/node
     entrypoint: npm
     volumes:
-      - src:/app
+      - ./src:/app
   mocha:
     build: ./docker/node
     entrypoint: mocha
     volumes:
-      - src:/app
+      - ./src:/app

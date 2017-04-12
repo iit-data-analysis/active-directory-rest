@@ -5,6 +5,6 @@ services:
     build: ./docker/node
     restart: always
     volumes:
-      - src:/app
+      - ./src:/app
     ports:
       - "8093:80"
