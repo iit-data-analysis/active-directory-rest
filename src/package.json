@@ -1,0 +1,25 @@
+{
+  "name": "active-directory-rest",
+  "version": "0.0.1",
+  "description": "REST web service to expose the content of an active directory domain.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iit-federico-bozzini/active-directory-rest.git"
+  },
+  "keywords": [
+    "rest",
+    "active-directoty",
+    "ldap",
+    "node"
+  ],
+  "author": "Federico Bozzini <federico.bozzini@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iit-federico-bozzini/active-directory-rest/issues"
+  },
+  "homepage": "https://github.com/iit-federico-bozzini/active-directory-rest#readme"
+}
