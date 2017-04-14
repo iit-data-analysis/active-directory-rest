@@ -11,3 +11,13 @@ services:
     entrypoint: mocha
     volumes:
       - ./src:/app
+  mocha:
+    build: ./docker/node
+    entrypoint: mocha
+    volumes:
+      - ./src:/app
+  tsc:
+    build: ./docker/node
+    entrypoint: tsc
+    volumes:
+      - ./src:/app

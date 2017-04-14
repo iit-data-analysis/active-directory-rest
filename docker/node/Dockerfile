@@ -1,9 +1,9 @@
-FROM node:7.8
-
-RUN apt-get update & apt-get install git
+FROM node:7.9-alpine
 
 RUN npm install -g mocha
-RUN npm install -g sails
-RUN npm install -g grunt
+RUN npm install -g typescript
+RUN npm install -g tsc-watch
 
 WORKDIR /app
+
+EXPOSE 3000

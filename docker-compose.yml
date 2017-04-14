@@ -1,10 +1,11 @@
 version: '2'
 
 services:
-  active-directory-rest:
+  node:
     build: ./docker/node
     restart: always
     volumes:
       - ./src:/app
     ports:
-      - "8093:80"
+      - "8093:3000"
+    command: tsc-watch --onSuccess 'node bin/www.js'
