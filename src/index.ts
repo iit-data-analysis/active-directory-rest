@@ -4,8 +4,8 @@ import * as cookieParser from "cookie-parser";
 import * as logger from "morgan";
 import * as fs from "fs";
 import * as path from "path";
-import errorHandler = require("errorhandler");
-import methodOverride = require("method-override");
+import * as errorHandler from "errorhandler";
+import * as methodOverride from "method-override";
 
 function configApp(app) {
     app.use(logger('common', {

@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
+    "module": "commonjs",
     "typeRoots": [
       "node_modules/@types"
-    ]
+    ],
+    "target": "es6"
   },
   "include": ["**/*.ts"],
   "exclude": [
