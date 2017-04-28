@@ -1,26 +1,26 @@
 import * as ldapTyped from 'ldapjs';
 
 const Ldap = {
-    getEntries: function (ldapConfig):Promise<any[]> {
+    getEntries: function (url, dnStr, password, filter, attributes):Promise<any[]> {
         //@types/ldap features incomplete types
         const ldap: any = ldapTyped;
 
         const client = ldap.createClient({
-            url: ldapConfig.url
+            url: url
         });
 
         const opts = {
-            filter: ldapConfig.filter,
+            filter: filter,
             scope: 'sub',
-            attributes: Object.keys(ldapConfig.mappings)
+            attributes: attributes
         };
 
         const ldapEntries = [];
 
-        const dn = ldap.parseDN(ldapConfig.dn);
+        const dn = ldap.parseDN(dnStr);
         return new Promise((resolve, reject) => {
 
-            client.bind(dn, ldapConfig.password, err => {
+            client.bind(dn, password, err => {
                 if (err) {
                     console.log('Ldap binding was not successful');
                     console.log(err.lde_message);
