@@ -4,3 +4,4 @@ src/typings/
 src/**/*.js
 src/**/*.map
 src/config/config.json
+src/jest_0

@@ -7,10 +7,11 @@
     ],
     "target": "es6"
   },
-  "include": ["**/*.ts"],
+  "include": [
+    "**/*.ts"
+  ],
   "exclude": [
     "node_modules",
-    "!node_modules/@types",
-    "**/*.spec.ts"
+    "!node_modules/@types"
   ]
 }
