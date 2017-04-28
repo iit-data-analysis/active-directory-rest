@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "7.9"
+sudo: true
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+before_script:
+  - cp src/config/config.json.example config/config.json
+  - npm install -g typescript
+  - npm install
+script:
+  - "npm test"
