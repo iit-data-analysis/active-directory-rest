@@ -1,6 +1,10 @@
 import * as loadJsonFile  from 'load-json-file';
 
 const testHelper = {
+    getConfig: async () => {
+        const config = await loadJsonFile('tests/fixtures/config.json');
+        return config;
+    },
     getLdapEntries: async () => {
         const ldapEntries = await loadJsonFile('tests/fixtures/ldap-entries.json');
         return ldapEntries;
@@ -14,12 +18,7 @@ const testHelper = {
         }];
         return expected;
     },
-    getDefaultMappings: () => ({
-        "sn": "surname",
-        "givenName": "name",
-        "cn": "fullName",
-        "userPrincipalName": "username"
-    })
+    getMappings: async function () {return (await this.getConfig()).ldap.mappings }
 };
 
 export default testHelper;

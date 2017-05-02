@@ -4,7 +4,7 @@ import userMapper from './userMapper';
 
 const User = {
     getUsers: async function() {
-        const config = await loadJsonFile('./config/config.json');
+        const config = await User.getConfig();
         const ldapConfig = config.ldap;
         const ldapAttributes = Object.keys(ldapConfig.mappings);
         const ldapEntries: Array<any> = await Ldap.getEntries(
@@ -16,6 +16,10 @@ const User = {
         const users = userMapper.mapUsers(ldapEntries, ldapConfig.mappings);
         console.log(users.length + ' users found');
         return users;
+    },
+    getConfig: async function() {
+        const config = await loadJsonFile('./config/config.json');
+        return config;
     }
 };
 
