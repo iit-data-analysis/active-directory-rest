@@ -12,6 +12,8 @@ const UserMapper = {
                     user[target] = [];
                 if (fieldMapping.multiple)
                     user[target] = _.castArray(user[target]);
+                if (fieldMapping.boolean)
+                    user[target] = !! user[target]; 
             });
             return user;
         });

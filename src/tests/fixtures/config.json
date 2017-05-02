@@ -16,6 +16,10 @@
       "extensionAttribute2": {
         "multiple": true,
         "target": "offices"
+      },
+      "extensionAttribute3": {
+        "boolean": true,
+        "target": "coordinator"
       }
     }
   }
