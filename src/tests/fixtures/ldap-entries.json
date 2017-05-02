@@ -3,6 +3,8 @@
     "sn": "Bozzini",
     "givenName": "Federico",
     "cn": "Federico Bozzini",
-    "userPrincipalName": "federico.bozzini@iit.it"
+    "userPrincipalName": "federico.bozzini@iit.it",
+    "extensionAttribute1": "ICT",
+    "extensionAttribute2": ["room1", "room2"]
   }
 ]

@@ -8,7 +8,15 @@
       "sn": "surname",
       "givenName": "name",
       "cn": "fullName",
-      "userPrincipalName": "username"
+      "userPrincipalName": "username",
+      "extensionAttribute1": {
+        "multiple": true,
+        "target": "groups"
+      },
+      "extensionAttribute2": {
+       "multiple": true,
+       "target": "offices"
+      }
     }
   }
 }
