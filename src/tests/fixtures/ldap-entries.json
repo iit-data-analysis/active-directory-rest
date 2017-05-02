@@ -6,5 +6,13 @@
     "userPrincipalName": "federico.bozzini@iit.it",
     "extensionAttribute1": "ICT",
     "extensionAttribute2": ["room1", "room2"]
+  },
+  {
+    "sn": "Semprini",
+    "givenName": "Federico",
+    "cn": "Federico Semprini",
+    "userPrincipalName": "federico.semprini@iit.it",
+    "extensionAttribute1": ["ICT"],
+    "extensionAttribute2": null
   }
 ]

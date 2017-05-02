@@ -17,6 +17,13 @@ const testHelper = {
             username: 'federico.bozzini@iit.it',
             groups: ['ICT'],
             offices: ['room1', 'room2']
+        }, {
+            name: 'Federico',
+            surname: 'Semprini',
+            fullName: 'Federico Semprini',
+            username: 'federico.semprini@iit.it',
+            groups: ['ICT'],
+            offices: []
         }];
         return expected;
     },
