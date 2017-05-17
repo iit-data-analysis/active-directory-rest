@@ -5,3 +5,5 @@ src/**/*.js
 src/**/*.map
 src/config/config.json
 src/jest_0
+src/logs/*
+!src/logs/.gitkeep

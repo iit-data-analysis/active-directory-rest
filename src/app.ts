@@ -1,9 +1,10 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
-var logger = require('morgan');
+var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+const rfs = require('rotating-file-stream');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -16,7 +17,15 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+const accessLogStream = rfs('access.log', {
+    size:     '1M',
+    interval: '1d',
+    compress: 'gzip',
+    path: path.join(__dirname, 'logs')
+});
+app.use(morgan('common', {
+    stream: accessLogStream
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
