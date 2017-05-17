@@ -8,4 +8,4 @@ services:
       - ./src:/app
     ports:
       - "8093:3000"
-    command: bash -c "tsc && node bin/www.js"
+    command: sh -c "tsc && node bin/www.js"
