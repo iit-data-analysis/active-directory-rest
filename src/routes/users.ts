@@ -12,7 +12,8 @@ router.get('/', async function (req, res, next) {
         logger.crit(err.message)
         res.send({
             error: true,
-            msg: err.message
+            msg: err.message,
+            stack: err.stack
         });
     }
 });
