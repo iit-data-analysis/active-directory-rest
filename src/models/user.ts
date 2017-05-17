@@ -1,6 +1,7 @@
 import * as loadJsonFile  from 'load-json-file';
 import Ldap from '../services/ldap';
 import userMapper from './userMapper';
+const logger: any = require('../services/logger');
 
 const User = {
     getUsers: async function() {
@@ -14,7 +15,8 @@ const User = {
             ldapConfig.filter,
             ldapAttributes);
         const users = userMapper.mapUsers(ldapEntries, ldapConfig.mappings);
-        console.log(users.length + ' users found');
+        const msg = users.length + ' users found'
+        logger.info(msg);
         return users;
     },
     getConfig: async function() {

@@ -36,7 +36,8 @@
     "morgan": "^1.8.1",
     "rotating-file-stream": "^1.2.2",
     "serve-favicon": "~2.4.2",
-    "typescript": "^2.3.2"
+    "typescript": "^2.3.2",
+    "winston": "^2.3.1"
   },
   "devDependencies": {
     "@types/body-parser": "^1.16.3",
