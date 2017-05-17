@@ -57,6 +57,7 @@
     "ts-jest": "^19.0.14"
   },
   "jest": {
+    "testEnvironment": "node",
     "transform": {
       ".(ts|tsx)": "./node_modules/ts-jest/preprocessor.js"
     },
