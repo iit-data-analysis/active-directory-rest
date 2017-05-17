@@ -9,9 +9,11 @@ router.get('/', async function (req, res, next) {
         const users = await User.getUsers();
         res.send(users);
     } catch(err) {
-        const msg = 'An error happened';
         logger.crit(err.message)
-        res.send(msg);
+        res.send({
+            error: true,
+            msg: err.message
+        });
     }
 });
 
