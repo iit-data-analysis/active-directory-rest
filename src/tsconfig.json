@@ -5,7 +5,8 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "target": "es6"
+    "target": "es6",
+    "lib": ["es2015", "es2017", "dom"]
   },
   "include": [
     "**/*.ts"
