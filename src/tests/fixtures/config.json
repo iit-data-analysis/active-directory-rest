@@ -10,16 +10,21 @@
       "cn": "fullName",
       "userPrincipalName": "username",
       "extensionAttribute1": {
-        "multiple": true,
+        "type": "multiple",
         "target": "groups"
       },
       "extensionAttribute2": {
-        "multiple": true,
+        "type": "multiple",
         "target": "offices"
       },
       "extensionAttribute3": {
-        "boolean": true,
+        "type": "boolean",
         "target": "coordinator"
+      },
+      "extensionAttribute4": {
+        "type": "boolean",
+        "op": "not",
+        "target": "hired"
       }
     }
   }

@@ -8,12 +8,19 @@ const UserMapper = {
                 const fieldMapping = mappings[ldapField];
                 const target = _.isString(fieldMapping) ? fieldMapping : fieldMapping.target;
                 user[target] = ldapEntry[ldapField];
-                if (fieldMapping.multiple && !user[target])
-                    user[target] = [];
-                if (fieldMapping.multiple)
-                    user[target] = _.castArray(user[target]);
-                if (fieldMapping.boolean)
-                    user[target] = !! user[target]; 
+                const type = fieldMapping.type || 'string';
+                if (type === 'multiple'){
+                    if (!user[target])
+                        user[target] = [];
+                    else
+                        user[target] = _.castArray(user[target]);
+                }
+                if (type === 'boolean') {
+                    if (fieldMapping.op === 'not')
+                        user[target] = !user[target];
+                    else
+                        user[target] = !!user[target];
+                }
             });
             return user;
         });

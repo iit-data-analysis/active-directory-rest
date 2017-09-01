@@ -6,7 +6,8 @@
     "userPrincipalName": "federico.bozzini@iit.it",
     "extensionAttribute1": "ICT",
     "extensionAttribute2": ["room1", "room2"],
-    "extensionAttribute3": "coordinator"
+    "extensionAttribute3": "coordinator",
+    "extensionAttribute4": "2018"
   },
   {
     "sn": "Semprini",
