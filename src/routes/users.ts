@@ -6,7 +6,8 @@ const  router = express.Router();
 /* GET users listing. */
 router.get('/', async function (req, res, next) {
     try {
-        const users = await User.getUsers();
+        const filters = Object.entries(req.query).map(([k, v]) => ({k: k, v: v}));
+        const users = await User.getUsers(filters);
         res.send(users);
     } catch(err) {
         logger.crit(err.message)

@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+const boolParser = require("express-query-boolean");
 const rfs = require('rotating-file-stream');
 
 var index = require('./routes/index');
@@ -27,6 +28,7 @@ app.use(morgan('common', {
     stream: accessLogStream
 }));
 app.use(bodyParser.json());
+app.use(boolParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
