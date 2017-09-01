@@ -18,7 +18,8 @@ const testHelper = {
             groups: ['ICT'],
             offices: ['room1', 'room2'],
             coordinator: true,
-            hired: false
+            hired: false,
+            scientificStaff: true
         }, {
             name: 'Federico',
             surname: 'Semprini',
@@ -27,7 +28,8 @@ const testHelper = {
             groups: ['ICT'],
             offices: [],
             coordinator: false,
-            hired: true
+            hired: true,
+            scientificStaff: false
         }];
         return expected;
     },

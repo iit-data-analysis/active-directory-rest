@@ -5,26 +5,34 @@
     "password": "pwd",
     "filter": "(&(sn=*)(cn=*)(givenName=*)(title=*)(!(UserAccountControl=514))(!(UserAccountControl=66050)))",
     "mappings": {
-      "sn": "surname",
-      "givenName": "name",
-      "cn": "fullName",
-      "userPrincipalName": "username",
-      "extensionAttribute1": {
+      "surname": "sn",
+      "name": "givenName",
+      "fullName": "cn",
+      "username": "userPrincipalName",
+      "groups": {
         "type": "multiple",
-        "target": "groups"
+        "source": "extensionAttribute1"
       },
-      "extensionAttribute2": {
+      "offices": {
         "type": "multiple",
-        "target": "offices"
+        "source": "extensionAttribute2"
       },
-      "extensionAttribute3": {
+      "coordinator": {
         "type": "boolean",
-        "target": "coordinator"
+        "source": "extensionAttribute3"
       },
-      "extensionAttribute4": {
+      "hired": {
         "type": "boolean",
         "op": "not",
-        "target": "hired"
+        "source": "extensionAttribute4"
+      },
+      "scientificStaff": {
+        "type": "boolean",
+        "op": "match",
+        "params": [
+          "(researcher|phd)"
+        ],
+        "source": "extensionAttribute5"
       }
     }
   }

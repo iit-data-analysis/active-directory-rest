@@ -7,7 +7,8 @@
     "extensionAttribute1": "ICT",
     "extensionAttribute2": ["room1", "room2"],
     "extensionAttribute3": "coordinator",
-    "extensionAttribute4": "2018"
+    "extensionAttribute4": "2018",
+    "extensionAttribute5": "senior researcher"
   },
   {
     "sn": "Semprini",
@@ -16,6 +17,7 @@
     "userPrincipalName": "federico.semprini@iit.it",
     "extensionAttribute1": ["ICT"],
     "extensionAttribute2": null,
-    "extensionAttribute3": null
+    "extensionAttribute3": null,
+    "extensionAttribute5": "technician"
   }
 ]
