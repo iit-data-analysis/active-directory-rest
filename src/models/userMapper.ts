@@ -19,8 +19,6 @@ const UserMapper = {
                     const operations = fieldMapping.operations || [];
                     for (let operation of operations) {
                         if (operation.op === 'not') {
-                            console.log(target);
-                            console.log(user[target]);
                             user[target] = !user[target];
                         }
                         if (operation.op === 'match') {
