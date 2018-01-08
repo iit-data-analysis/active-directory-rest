@@ -16,14 +16,19 @@ const UserMapper = {
                         user[target] = _.castArray(user[target]);
                 }
                 if (type === 'boolean') {
-                    if (fieldMapping.op === 'not')
-                        user[target] = !user[target];
-                    else if (fieldMapping.op === 'match') {
-                        const regex = new RegExp(fieldMapping.params[0], 'ig');
-                        user[target] = regex.test(user[target]);
+                    const operations = fieldMapping.operations || [];
+                    for (let operation of operations) {
+                        if (operation.op === 'not') {
+                            console.log(target);
+                            console.log(user[target]);
+                            user[target] = !user[target];
+                        }
+                        if (operation.op === 'match') {
+                            const regex = new RegExp(operation.params[0], 'ig');
+                            user[target] = regex.test(user[target]);
+                        }  
                     }
-                    else
-                        user[target] = !!user[target];
+                    user[target] = !!user[target];
                 }
             });
             return user;

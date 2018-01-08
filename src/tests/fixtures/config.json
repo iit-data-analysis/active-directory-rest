@@ -23,14 +23,22 @@
       },
       "hired": {
         "type": "boolean",
-        "op": "not",
-        "source": "extensionAttribute4"
+        "source": "extensionAttribute4",
+        "operations": [
+          {
+            "op": "not"
+          }
+        ]
       },
       "scientificStaff": {
         "type": "boolean",
-        "op": "match",
-        "params": [
-          "(researcher|phd)"
+        "operations": [
+          {
+            "op": "match",
+            "params": [
+              "(researcher|phd)"
+            ]
+          }
         ],
         "source": "extensionAttribute5"
       }
