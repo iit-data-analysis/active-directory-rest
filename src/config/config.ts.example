@@ -1,0 +1,28 @@
+const Config = {
+    "ldap": {
+        "url": "ldap://127.0.0.1:3268",
+        "dn": "CN=user1,OU=Users,DC=company,DC=local",
+        "password": "pwd",
+        "filter": "(&(sn=*)(cn=*)(givenName=*)(title=*)(!(UserAccountControl=514))(!(UserAccountControl=66050)))",
+        "mappings": {
+            "sn": "surname",
+            "givenName": "name",
+            "cn": "fullName",
+            "userPrincipalName": "username",
+            "extensionAttribute1": {
+                "multiple": true,
+                "target": "groups"
+            },
+            "extensionAttribute2": {
+                "multiple": true,
+                "target": "offices"
+            },
+            "extensionAttribute3": {
+                "boolean": true,
+                "target": "coordinator"
+            }
+        }
+    }
+};
+
+export default Config;

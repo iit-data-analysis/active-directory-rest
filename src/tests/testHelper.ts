@@ -1,13 +1,12 @@
-import * as loadJsonFile  from 'load-json-file';
+import * as loadJsonFile from 'load-json-file';
+import config from './fixtures/config';
 
 const testHelper = {
-    getConfig: async () => {
-        const config = await loadJsonFile('tests/fixtures/config.json');
+    getConfig: () => {
         return config;
     },
     getLdapEntries: async () => {
-        const ldapEntries = await loadJsonFile('tests/fixtures/ldap-entries.json');
-        return ldapEntries;
+        return await loadJsonFile('tests/fixtures/ldap-entries.json');
     },
     getExpected: () => {
         const expected = [{
@@ -33,7 +32,9 @@ const testHelper = {
         }];
         return expected;
     },
-    getMappings: async function () {return (await this.getConfig()).ldap.mappings }
+    getMappings: function () {
+        return config.ldap.mappings;
+    }
 };
 
 export default testHelper;

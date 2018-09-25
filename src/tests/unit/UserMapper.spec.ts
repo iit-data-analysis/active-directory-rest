@@ -4,7 +4,7 @@ import testHelper from "../testHelper";
 describe("UserMapper", () => {
     test('simple example', async () => {
         const ldapEntries = await testHelper.getLdapEntries();
-        const mappings = await testHelper.getMappings();
+        const mappings = testHelper.getMappings();
         const users = UserMapper.mapUsers(ldapEntries, mappings);
         expect(users).toEqual(testHelper.getExpected());
     });

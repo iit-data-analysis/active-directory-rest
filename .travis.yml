@@ -12,7 +12,7 @@ addons:
       - g++-4.8
 before_script:
   - cd src
-  - cp config/config.json.example config/config.json
+  - cp config/config.ts.example config/config.ts
   - npm install -g typescript
   - npm install
 script:

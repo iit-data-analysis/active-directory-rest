@@ -1,16 +1,17 @@
-import * as loadJsonFile  from 'load-json-file';
 import Ldap from '../services/ldap';
 import userMapper from './userMapper';
 import userFilterer from './userFilterer';
+import config from '../config/config';
+
 const logger: any = require('../services/logger');
 import * as _ from 'lodash';
 
 
 const User = {
     getUsers: async function(filters) {
-        const config = await User.getConfig();
+        const config = User.getConfig();
         const ldapConfig = config.ldap;
-        const ldapAttributes = Object.values(ldapConfig.mappings).map(m => _.isString(m) ? m : m.source);
+        const ldapAttributes = _.flatten(Object.values(ldapConfig.mappings).map((m: any) => _.isString(m) ? m : m.source));
         const ldapEntries: Array<any> = await Ldap.getEntries(
             ldapConfig.url,
             ldapConfig.dn,
@@ -23,8 +24,7 @@ const User = {
         logger.info(msg);
         return filteredUsers;
     },
-    getConfig: async function() {
-        const config = await loadJsonFile('./config/config.json');
+    getConfig: function() {
         return config;
     }
 };

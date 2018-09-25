@@ -10,7 +10,7 @@ router.get('/', async function (req, res, next) {
         const users = await User.getUsers(filters);
         res.send(users);
     } catch(err) {
-        logger.crit(err.message)
+        logger.crit(err.message);
         res.send({
             error: true,
             msg: err.message,

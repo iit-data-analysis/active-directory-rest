@@ -3,7 +3,7 @@ src/node_modules/
 src/typings/
 src/**/*.js
 src/**/*.map
-src/config/config.json
+src/config/config.ts
 src/jest_0
 src/logs/*
 !src/logs/.gitkeep
